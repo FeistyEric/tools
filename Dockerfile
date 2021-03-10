@@ -38,22 +38,28 @@ RUN arkade --help
 RUN ark --help  # a handy alias
 
 RUN ark get helm
-
+RUN mv /root/.arkade/bin/helm /usr/local/bin/
 RUN helm plugin install --version master https://github.com/sonatype-nexus-community/helm-nexus-push.git
 RUN helm nexus-push --help
 
 RUN ark get kubectl
+mv /root/.arkade/bin/kubectl /usr/local/bin/
 RUN ark get kubectx
+mv /root/.arkade/bin/kubectx /usr/local/bin/
 RUN ark get doctl
+mv /root/.arkade/bin/doctl /usr/local/bin/
 RUN ark get k9s
+mv /root/.arkade/bin/k9s /usr/local/bin/
 RUN ark get popeye
+mv /root/.arkade/bin/popeye /usr/local/bin/
 RUN ark get krew
+RUN mv /root/.arkade/bin/krew /usr/local/bin/
 RUN ark get linkerd2
-RUN export PATH=$PATH:$HOME/.arkade/bin/
-RUN kubectl krew install ns
-RUN kubectl krew install ctx
-RUN kubectl krew install cert-manager
-RUN kubectl krew install popeye
+mv /root/.arkade/bin/linkerd2 /usr/local/bin/linkerd
+# RUN kubectl krew install ns
+# RUN kubectl krew install ctx
+# RUN kubectl krew install cert-manager
+# RUN kubectl krew install popeye
 
 RUN git clone https://github.com/andrey-pohilko/registry-cli.git
 RUN pip install -r registry-cli/requirements-build.txt
