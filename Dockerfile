@@ -48,7 +48,7 @@ RUN ark get doctl
 RUN ark get k9s
 RUN ark get popeye
 RUN ark get krew
-RUN ark get likerd2
+RUN ark get linkerd2
 
 RUN kubectl krew install ns
 RUN kubectl krew install ctx
