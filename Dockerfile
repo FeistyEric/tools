@@ -49,7 +49,7 @@ RUN ark get k9s
 RUN ark get popeye
 RUN ark get krew
 RUN ark get linkerd2
-
+RUN export PATH=$PATH:$HOME/.arkade/bin/
 RUN kubectl krew install ns
 RUN kubectl krew install ctx
 RUN kubectl krew install cert-manager
