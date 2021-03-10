@@ -43,19 +43,19 @@ RUN helm plugin install --version master https://github.com/sonatype-nexus-commu
 RUN helm nexus-push --help
 
 RUN ark get kubectl
-mv /root/.arkade/bin/kubectl /usr/local/bin/
+RUN mv /root/.arkade/bin/kubectl /usr/local/bin/
 RUN ark get kubectx
-mv /root/.arkade/bin/kubectx /usr/local/bin/
+RUN mv /root/.arkade/bin/kubectx /usr/local/bin/
 RUN ark get doctl
-mv /root/.arkade/bin/doctl /usr/local/bin/
+RUN mv /root/.arkade/bin/doctl /usr/local/bin/
 RUN ark get k9s
-mv /root/.arkade/bin/k9s /usr/local/bin/
+RUN mv /root/.arkade/bin/k9s /usr/local/bin/
 RUN ark get popeye
-mv /root/.arkade/bin/popeye /usr/local/bin/
+RUN mv /root/.arkade/bin/popeye /usr/local/bin/
 RUN ark get krew
 RUN mv /root/.arkade/bin/krew /usr/local/bin/
 RUN ark get linkerd2
-mv /root/.arkade/bin/linkerd2 /usr/local/bin/linkerd
+RUN mv /root/.arkade/bin/linkerd2 /usr/local/bin/linkerd
 # RUN kubectl krew install ns
 # RUN kubectl krew install ctx
 # RUN kubectl krew install cert-manager
