@@ -53,7 +53,7 @@ RUN krew install cert-manager
 RUN krew install popeye
 RUN krew install starboard
 RUN krew install view-utilization
-
+RUN krew install bd-xray
 RUN git clone https://github.com/andrey-pohilko/registry-cli.git
 RUN pip install -r registry-cli/requirements-build.txt
 
