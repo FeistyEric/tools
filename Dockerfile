@@ -26,7 +26,6 @@ RUN apt-get update && apt-get install -y \
   awscli \
   uuid-runtime
   
-#   && rm -rf /var/lib/apt/lists/*
 
 RUN bash
 
@@ -52,6 +51,8 @@ RUN krew install ns
 RUN krew install ctx
 RUN krew install cert-manager
 RUN krew install popeye
+RUN krew install starboard
+RUN krew install view-utilization
 
 RUN git clone https://github.com/andrey-pohilko/registry-cli.git
 RUN pip install -r registry-cli/requirements-build.txt
