@@ -11,20 +11,20 @@ ENV PATH=${PATH}:/root/.krew/bin:/root/.arkade/bin:/root/.linkerd2/bin
 RUN apk add --no-cache \
             python3 \
             py3-pip \
-  curl \
-  git \
-  openssl \
-  zsh \
-  tree \
-  vim \
-  jq \
-  wget \
-  bash \
-  util-linux \
-        && pip3 install --upgrade pip \
-        && pip3 install \
+            curl \
+            git \
+            openssl \
+            zsh \
+            tree \
+            vim \
+            jq \
+            wget \
+            bash \
+            util-linux \
+            && pip3 install --upgrade pip \
+            && pip3 install \
             awscli \
-  && rm -rf /var/cache/apk/* 
+            && rm -rf /var/cache/apk/* 
 
 RUN bash
 
@@ -59,16 +59,16 @@ RUN krew install janitor
 RUN krew install graph
 RUN krew install flame
 RUN git clone https://github.com/andrey-pohilko/registry-cli.git
-RUN pip install -r registry-cli/requirements-build.txt
+RUN pip3 install -r registry-cli/requirements-build.txt
 
-RUN /root/registry-cli/registry.py || :
+RUN python3 /root/registry-cli/registry.py || :
  
  
 RUN curl -L https://github.com/gimlet-io/gimlet-cli/releases/download/v0.3.0/gimlet-$(uname)-$(uname -m) -o gimlet
 RUN chmod +x gimlet
 RUN mv ./gimlet /usr/local/bin/gimlet
 RUN gimlet --version
-RUN rm -rf /var/lib/apt/lists/*
+
 RUN rm -rf /tmp/*
 CMD ["sleep", "infinity"]
 
