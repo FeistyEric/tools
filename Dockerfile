@@ -4,12 +4,13 @@
 # We don't recommend using it: If you want to develop in docker, please use `make docker_build`
 # instead.
 
-FROM debian:buster
+FROM alpine:latest 
 
 ENV PATH=${PATH}:/root/.krew/bin:/root/.arkade/bin:/root/.linkerd2/bin
 
-RUN apt-get update && apt-get install -y \
-  apt-utils \
+RUN apk add --no-cache \
+            python3 \
+            py3-pip \
   curl \
   git \
   openssl \
@@ -18,14 +19,12 @@ RUN apt-get update && apt-get install -y \
   vim \
   jq \
   wget \
-  gdebi-core \ 
-  net-tools \
-  procps \
-  python \
-  python-pip \
-  awscli \
-  uuid-runtime
-  
+  bash \
+  util-linux \
+        && pip3 install --upgrade pip \
+        && pip3 install \
+            awscli \
+  && rm -rf /var/cache/apk/* 
 
 RUN bash
 
