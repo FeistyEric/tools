@@ -54,6 +54,11 @@ RUN krew install popeye
 RUN krew install starboard
 RUN krew install view-utilization
 RUN krew install bd-xray
+RUN krew install status
+RUN krew install topology
+RUN krew install janitor
+RUN krew install graph
+RUN krew install flame
 RUN git clone https://github.com/andrey-pohilko/registry-cli.git
 RUN pip install -r registry-cli/requirements-build.txt
 
