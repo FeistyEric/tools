@@ -68,7 +68,7 @@ RUN curl -L https://github.com/gimlet-io/gimlet-cli/releases/download/v0.3.0/gim
 RUN chmod +x gimlet
 RUN mv ./gimlet /usr/local/bin/gimlet
 RUN gimlet --version
-
+ 
 RUN rm -rf /tmp/*
 CMD ["sleep", "infinity"]
 
