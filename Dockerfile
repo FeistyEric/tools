@@ -58,6 +58,8 @@ RUN krew install topology
 RUN krew install janitor
 RUN krew install graph
 RUN krew install flame
+RUN krew install doctor
+RUN krew install node-shell
 RUN git clone https://github.com/andrey-pohilko/registry-cli.git
 RUN pip3 install -r registry-cli/requirements-build.txt
 
